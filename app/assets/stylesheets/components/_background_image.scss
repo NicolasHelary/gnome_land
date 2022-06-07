@@ -1,0 +1,18 @@
+.background_image{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1587256961522-9baaa5a730da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 20px;
+}
