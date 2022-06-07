@@ -1,0 +1,7 @@
+<h2><%= @gnome.name %></h2>
+<p><%= @gnome.description %></p>
+
+<%= link_to "Delete #{@gnome.name}",
+            gnome_path(@gnome),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
