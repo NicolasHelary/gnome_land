@@ -1,12 +1,23 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+#app-name {
+  font-size: 32px;
+  font-family: 'Fuzzy Bubbles', cursive;
+  color: $red;
+  font-weight: bolder;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand {
+  margin-right: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#navbar-search {
+  color: $light-gray;
+}
+
+.navbar-toggler {
+  padding: 5px 10px;
+}
+
+.navbar {
+  position: absolute;
+  width: 100vw;
 }
