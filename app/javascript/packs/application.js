@@ -14,3 +14,5 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+// import { searchBarToggle } from "../plugins/init_searchbar"
+// searchBarToggle()

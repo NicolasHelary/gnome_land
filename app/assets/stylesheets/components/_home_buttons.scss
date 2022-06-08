@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
 
-
-#add-rent-link {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.home-btn-link {
+  margin: 10px 0px;
   font-family: "Fuzzy Bubbles";
 }
 
-#rent-link {
-  font-family: "Fuzzy Bubbles";
-}
-
-.nav-link {
-  font-family: "Fuzzy Bubbles";
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 0px;
 }
