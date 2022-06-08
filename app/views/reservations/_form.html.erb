@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for [@gnome, @reservation] do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
