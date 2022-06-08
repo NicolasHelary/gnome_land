@@ -1,1 +1,17 @@
-<h1>Browse gnomes</h1>
+<div class="cards container">
+<% @gnomes.each do |gnome| %>
+  <div class="card-product">
+      <%= cl_image_tag gnome.photo.key, height: 216, width: 296, crop: :fill %>
+    <div class="card-product-infos">
+      <h2><%= gnome.name %></h2>
+      <p><%= gnome.description %></p>
+      <p><%= gnome.price %></p>
+     <p class="link-index btn btn-outline-success btn-rounded"> <%= link_to "Rent this gnome", gnomes_path %></p>
+      <p class="link-index btn btn-outline-warning btn-rounded"><%= link_to "Delete #{gnome.name}",
+                    gnome_path(gnome),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
