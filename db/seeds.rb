@@ -34,7 +34,7 @@ gnome3 = Gnome.create!(name: 'Prof', description: 'Chef autoproclamé du groupe'
 puts "3 gnomes were created"
 gnome4 = Gnome.create!(name: 'Simplet', description: 'Le nain muet, préferé de blanche', price: 13, user: user1)
 gnome5 = Gnome.create!(name: 'Timide' , description: 'Timide, tres timide mais efficace', price: 14, user: user1)
-gnome6 = Gnome.create!(name: 'Dormeur', description: 'Très paresseux, toujours en manque de someil', price: 15, user: user2)
+gnome6 = Gnome.create!(name: 'Dormeur', description: 'Très paresseux, toujours en manque de sommeil', price: 15, user: user2)
 gnome7 = Gnome.create!(name: 'Grincheux',  description: 'Grincheux, râleur de la bande', price: 16, user: user2)
 puts "7 gnomes were created"
 
