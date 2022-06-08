@@ -1,5 +1,7 @@
+
   <div class="show-container">
       <%= cl_image_tag @gnome.photo.key, height: 216, width: 296, crop: :fill %>
+    <div class="card-product-infos">
       <h2><%= @gnome.name %></h2>
       <p><%= @gnome.description %></p>
       <p><%= @gnome.price %> €</p>
@@ -9,5 +11,5 @@
                   gnome_path(@gnome),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
-
   </div>
+</div>
