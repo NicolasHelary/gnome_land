@@ -18,6 +18,15 @@
 }
 
 .navbar {
-  position: absolute;
+  // position: absolute;
   width: 100vw;
+}
+
+.fa-search:before {
+  color: $light-gray;
+  font-size: 20px;
+}
+
+#search-icon:before {
+  color: black;
 }

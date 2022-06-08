@@ -2,7 +2,7 @@
   <%= simple_form_for(gnome) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-
+    <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>
 </div>

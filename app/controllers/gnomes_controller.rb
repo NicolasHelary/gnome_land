@@ -38,7 +38,7 @@ class GnomesController < ApplicationController
   private
 
   def gnome_params
-    params.require(:gnome).permit(:name, :description)
+    params.require(:gnome).permit(:name, :description, :photo)
   end
 
   def set_gnome
