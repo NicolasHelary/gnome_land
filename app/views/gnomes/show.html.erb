@@ -1,9 +1,9 @@
   <div>
-      <%= cl_image_tag (@gnome.photo.key, height: 216, width: 296, crop: :fill) %>
+      <%= cl_image_tag @gnome.photo.key, height: 216, width: 296, crop: :fill %>
       <h2><%= @gnome.name %></h2>
       <p><%= @gnome.description %></p>
       <p><%= @gnome.price %></p>
-      <%= link_to "Rent this gnome", reservations_path(@gnome) %>
+      <%= link_to "Rent this gnome", gnomes_path %>
 
       <%# <%= link_to "Delete #{@gnome.name}",
                   gnome_path(@gnome),
