@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 2022_06_08_104441) do
     t.index ["user_id"], name: "index_gnomes_on_user_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id", null: false
+    t.bigint "gnome_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gnome_id"], name: "index_reservations_on_gnome_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -70,4 +81,6 @@ ActiveRecord::Schema.define(version: 2022_06_08_104441) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "gnomes", "users"
+  add_foreign_key "reservations", "gnomes"
+  add_foreign_key "reservations", "users"
 end
