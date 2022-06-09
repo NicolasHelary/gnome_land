@@ -8,11 +8,19 @@ const animationTrololo = () => {
   }
 
   const modal = document.querySelector("#btn-modal");
-  const laugh = document.getElementById("laugh")
+  const laugh = document.getElementById("laugh");
 
   modal.onclick = function() {
     laugh.play();
   }
+
+  // const reservation = document.querySelector("#IDduContainerDElaPAGEdeRESERVATION");
+  // const wow = document.getElementById("wow");
+
+  // if (reservation) {
+  //   wow.play();
+  // }
+
 }
 
 
