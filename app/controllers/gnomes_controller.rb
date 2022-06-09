@@ -27,12 +27,12 @@ class GnomesController < ApplicationController
 
   def update
     @gnome.update(gnome_params)
-    redirect_to gnome_path(@gnome)
+    redirect_to profil_path
   end
 
   def destroy
     @gnome.destroy
-    redirect_to gnomes_path
+    redirect_to profil_path
   end
 
   private
