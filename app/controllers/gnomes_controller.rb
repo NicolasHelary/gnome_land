@@ -15,8 +15,9 @@ class GnomesController < ApplicationController
 
   def create
     @gnome = Gnome.new(gnome_params)
+    @gnome.user = current_user
     if @gnome.save
-      redirect_to gnome_path(@gnome)
+      redirect_to gnomes_path
     else
       render :new
     end
@@ -38,7 +39,7 @@ class GnomesController < ApplicationController
   private
 
   def gnome_params
-    params.require(:gnome).permit(:name, :description, :photo)
+    params.require(:gnome).permit(:name, :description, :price, :photo)
   end
 
   def set_gnome
