@@ -1,0 +1,22 @@
+.show-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+  width: 100vw;
+  height: 100%;
+}
+
+.show-container img {
+  padding-top: 20px;
+}
+
+.show-container p {
+  justify-content: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.show-container h2 {
+font-weight: bold;
+}

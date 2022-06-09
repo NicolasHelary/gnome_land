@@ -6,7 +6,7 @@
       <h2><%= gnome.name %></h2>
       <p><%= gnome.description %></p>
       <p><%= gnome.price %></p>
-     <p class="link-index btn btn-outline-success btn-rounded"> <%= link_to "Rent this gnome", gnomes_path %></p>
+     <p class="link-index btn btn-outline-success btn-rounded"> <%= link_to "Rent this gnome", gnome_path(gnome) %></p>
       <p class="link-index btn btn-outline-warning btn-rounded"><%= link_to "Delete #{gnome.name}",
                     gnome_path(gnome),
                     method: :delete,
