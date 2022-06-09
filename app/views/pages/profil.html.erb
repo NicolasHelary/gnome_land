@@ -10,7 +10,7 @@
       <h2><%= gnome.name %></h2>
       <p><%= gnome.description %></p>
       <p><%= gnome.price %> €</p>
-      <%= link_to "Edit this gnome", edit_gnome_path(gnome), class: "btn btn-success text-white rounded-4" %>
+      <%= link_to "Edit #{gnome.name}", edit_gnome_path(gnome), class: "btn btn-success text-white rounded-4" %>
 
       <%= link_to "Delete #{gnome.name}",
                   gnome_path(gnome),
