@@ -15,6 +15,7 @@ class GnomesController < ApplicationController
 
   def create
     @gnome = Gnome.new(gnome_params)
+    @gnome.user = current_user
     if @gnome.save
       redirect_to gnome_path(@gnome)
     else
