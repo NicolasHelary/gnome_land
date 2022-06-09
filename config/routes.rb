@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :gnomes do
     resources :reservations, only: %i[new create destroy]
   end
+  get "/profil", to: "pages#profil"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
