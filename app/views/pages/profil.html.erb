@@ -1,7 +1,7 @@
 
 <h2><%= "Hello #{current_user.first_name} #{current_user.last_name} !"%></h2>
-
-<h2><%= "You have #{current_user.gnomes.count} gnomes for rent" %></h2>
+  <% gnome_number = current_user.gnomes.count %>
+<h2><%= gnome_number > 1 ? "You have #{current_user.gnomes.count} gnomes for rent" : "You have #{current_user.gnomes.count} gnome for rent" %></h2>
 
   <% current_user.gnomes.each do |gnome| %>
   <div class="show-container">
