@@ -1,13 +1,13 @@
-  <div class="show-container" id="show-page">
+<div class="show-container" id="show-page">
       <%= cl_image_tag @gnome.photo.key, height: 216, width: 296, crop: :fill %>
     <div class="card-product-infos">
       <h2><%= @gnome.name %></h2>
       <p><span>Description</span> : <%= @gnome.description %></p>
       <p>Prix : <%= @gnome.price %> €</p>
-      <%= link_to "Rent this gnome", new_gnome_reservation_path(@gnome), class: "btn btn-success text-white rounded-4 shadow" %>
-    <br>
-    <br>
-    <%= link_to "Delete #{@gnome.name}",
+      <%= link_to "Rent this gnome", new_gnome_reservation_path(@gnome), class: "btn btn-success rounded-4" %>
+
+      <%= link_to "Back To The Gnomes", gnomes_path, class: "btn btn-dark rounded-4" %>
+    <%#= link_to "Delete #{@gnome.name}",
                 gnome_path(@gnome),
                 method: :delete,
                 data: { confirm: "Are you sure?" },
