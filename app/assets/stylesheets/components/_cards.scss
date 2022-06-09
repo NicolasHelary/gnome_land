@@ -25,6 +25,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 8px;
+}
+
+.card-product:hover {
+  background-color: greenyellow;
 }
 
 .card-product img {
@@ -34,23 +39,50 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
+  margin-top: 5px;
+  font-family: "Fuzzy Bubbles";
 }
 
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  font-family: "Fuzzy Bubbles";
 }
 
 .card-product .card-product-infos {
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .link-index {
   text-decoration: none;
+}
+
+.gnome-name {
+  padding-left: 6px;
+}
+
+.gnome-desc {
+  padding: 6px;
+}
+
+.gnome-infos {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-left: 6px;
+  width: 227px;
+}
+
+.cards a {
+  text-decoration: none;
+  color: black;
 }
