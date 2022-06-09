@@ -1,0 +1,22 @@
+
+<h2><%= "Hello #{current_user.first_name} #{current_user.last_name} !"%></h2>
+
+<h2><%= "You have #{current_user.gnomes.count} gnomes for rent" %></h2>
+
+  <% current_user.gnomes.each do |gnome| %>
+  <div class="show-container">
+      <%= cl_image_tag gnome.photo.key, height: 216, width: 296, crop: :fill %>
+    <div class="card-product-infos">
+      <h2><%= gnome.name %></h2>
+      <p><%= gnome.description %></p>
+      <p><%= gnome.price %> €</p>
+      <%= link_to "Edit #{gnome.name}", edit_gnome_path(gnome), class: "btn btn-success text-white rounded-4" %>
+
+      <%= link_to "Delete #{gnome.name}",
+                  gnome_path(gnome),
+                  method: :delete,
+                  class: "btn btn-danger text-white rounded-4",
+                  data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
+  <% end %>
