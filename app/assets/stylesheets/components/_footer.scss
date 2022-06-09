@@ -18,5 +18,10 @@
 .footer-gnome {
   bottom: 0;
   width: 100%;
-  // position: absolute;
+  position: absolute;
+  height: 14vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2vmin;
 }

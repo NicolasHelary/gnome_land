@@ -8,11 +8,15 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-// import { searchBarToggle } from "../plugins/init_searchbar"
-// searchBarToggle()
+import { animationTrololo } from "../plugins/init_animation"
+
+document.addEventListener("turbolinks:load", event => {
+  animationTrololo()
+})

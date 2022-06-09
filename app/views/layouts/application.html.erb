@@ -14,9 +14,11 @@
   </head>
 
   <body>
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-    <%= yield %>
-  <%= render 'shared/footer' %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+        <%= yield %>
+      <%= render 'shared/footer' %>
+
+      <audio id="audio" src="app/assets/sound/Animewow.mp3"></audio>
   </body>
 </html>
