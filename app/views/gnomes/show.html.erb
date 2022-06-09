@@ -3,13 +3,15 @@
       <%= cl_image_tag @gnome.photo.key, height: 216, width: 296, crop: :fill %>
     <div class="card-product-infos">
       <h2><%= @gnome.name %></h2>
-      <p><%= @gnome.description %></p>
-      <p><%= @gnome.price %> €</p>
-      <%= link_to "Rent this gnome", new_gnome_reservation_path(@gnome), class: "btn btn-danger text-white rounded-4" %>
-
-      <%# <%= link_to "Delete #{@gnome.name}",
-                  gnome_path(@gnome),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
+      <p><span>Description</span> : <%= @gnome.description %></p>
+      <p>Prix : <%= @gnome.price %> €</p>
+      <%= link_to "Rent this gnome", new_gnome_reservation_path(@gnome), class: "btn btn-success text-white rounded-4 shadow" %>
+    <br>
+    <br>
+    <%= link_to "Delete #{@gnome.name}",
+                gnome_path(@gnome),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: "btn btn-danger text-white rounded-4 shadow" %>
   </div>
 </div>

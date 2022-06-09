@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d9d9d9;
-  width: 100vw;
+  background-color: #e9eef8;
+  max-width: 375px;
   height: 678px;
 }
 
@@ -19,5 +19,16 @@
 
 .show-container h2 {
 font-weight: bold;
+padding-left: 25px;
+padding-top: 5px;
 }
 
+.show-container a {
+margin-left: 25px;
+font-family: "Fuzzy Bubbles";
+}
+
+.show-container span {
+  font-weight: bold;
+  font-family: "Fuzzy Bubbles";
+  }
