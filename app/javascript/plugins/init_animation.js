@@ -1,13 +1,22 @@
 const animationTrololo = () => {
 
-  var audio = document.getElementById("audio");
-  document.onclick = function() {
-    audio.play();
+  const show = document.querySelector("#show-page");
+  const animewow = document.getElementById("anime-wow");
+
+  if (show) {
+    animewow.play();
+  }
+
+  const modal = document.querySelector("#btn-modal");
+  const laugh = document.getElementById("laugh")
+
+  modal.onclick = function() {
+    laugh.play();
   }
 }
 
-  // var audio = document.getElementById("audio");
-  // audio.addEventListener("click", (event) => {
-  // })
 
+// document.onclick = function() {
+//   audio.play();
+// }
 export {animationTrololo}

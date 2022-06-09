@@ -18,7 +18,7 @@
       <%= render 'shared/flashes' %>
         <%= yield %>
       <%= render 'shared/footer' %>
-
-      <audio id="audio" src="app/assets/sound/Animewow.mp3"></audio>
+      <%=audio_tag("Animewow.mp3", id: "anime-wow")%>
+      <%=audio_tag("Laugh.mp3", id: "laugh")%>
   </body>
 </html>
