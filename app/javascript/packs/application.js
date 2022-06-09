@@ -15,8 +15,8 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-// import { searchBarToggle } from "../plugins/init_searchbar"
+import { animationTrololo } from "../plugins/init_animation"
 
 document.addEventListener("turbolinks:load", event => {
-  searchBarToggle()
+  animationTrololo()
 })
