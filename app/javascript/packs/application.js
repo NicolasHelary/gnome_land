@@ -18,5 +18,5 @@ import "bootstrap"
 import { animationTrololo } from "../plugins/init_animation"
 
 document.addEventListener("turbolinks:load", event => {
-  animationTrololo()
+  animationTrololo();
 })
