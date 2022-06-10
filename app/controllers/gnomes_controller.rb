@@ -23,6 +23,7 @@ class GnomesController < ApplicationController
   end
 
   def edit
+    @reservation = @gnome.reservation
   end
 
   def update

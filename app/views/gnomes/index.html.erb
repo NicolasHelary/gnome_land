@@ -10,8 +10,8 @@
       <p><%= gnome.description %></p>
       <p><%= gnome.price %></p>
      <p class="link-index btn btn-outline-success btn-rounded"> <%= link_to "Rent this gnome", gnome_path(gnome) %></p>
-      <p class="link-index btn btn-outline-warning btn-rounded"><%= link_to "Delete #{gnome.name}",
-                    gnome_path(gnome),
+      <%# <p class="link-index btn btn-outline-warning btn-rounded"><%= link_to "Delete #{gnome.name}", %>
+                    <%# gnome_path(gnome),
                     method: :delete,
                     data: { confirm: "Are you sure?" } %></p>
     </div>
