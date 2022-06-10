@@ -48,7 +48,7 @@
         <p><%= "Gnome: #{reservation.gnome.name}" %></p>
         <p><%= "Start date: #{reservation.start_date}" %></p>
         <p><%= "End date: #{reservation.end_date}" %></p>
-        <p><%= "Number of days: #{(reservation.end_date-reservation.start_date)}" %></p>
+        <p><%= "Number of days: #{(reservation.end_date-reservation.start_date).to_i}" %></p>
         <p><%= "Total price: #{((reservation.end_date-reservation.start_date) * reservation.gnome.price).to_i}€" %></p>
         <%= link_to "Edit reservation", edit_gnome_reservation_path(reservation.gnome, reservation),
           class: "btn btn-success text-white rounded-4" %>

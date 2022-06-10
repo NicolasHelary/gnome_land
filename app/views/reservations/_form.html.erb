@@ -1,5 +1,5 @@
 <div class="container">
-  <% simple_form_for [@gnome, @reservation] do |f| %>
+  <%= simple_form_for [@gnome, @reservation] do |f| %>
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
 
@@ -9,6 +9,6 @@
   <br>
 
   <div class="gif">
-    <%#= image_tag"gif-gnome.gif", :class => "gif-gnome" %>
+    <%= image_tag"gif-gnome.gif", :class => "gif-gnome" %>
   </div>
 </div>
