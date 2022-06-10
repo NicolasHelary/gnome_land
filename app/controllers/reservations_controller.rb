@@ -20,11 +20,11 @@ class ReservationsController < ApplicationController
   end
 
   def edit ##
-    @gnome = reservation.gnome
+    @gnome = @reservation.gnome
   end
 
   def update ##
-    reservation.update(reservation_params)
+    @reservation.update(reservation_params)
     redirect_to profil_path
   end
 
