@@ -7,20 +7,21 @@ const animationTrololo = () => {
     animewow.play();
   }
 
+  const reservation = document.querySelector("#index-path");
+  const wow = document.getElementById("wow-willy");
+
+  if (reservation) {
+    wow.play();
+  }
+
+
   const modal = document.querySelector("#btn-modal");
   const laugh = document.getElementById("laugh");
 
-  modal.onclick = function() {
+
+  modal.addEventListener('click', (event => {
     laugh.play();
-  }
-
-  // const reservation = document.querySelector("#IDduContainerDElaPAGEdeRESERVATION");
-  // const wow = document.getElementById("wow");
-
-  // if (reservation) {
-  //   wow.play();
-  // }
-
+  }))
 }
 
 
