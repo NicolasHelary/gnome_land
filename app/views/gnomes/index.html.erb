@@ -1,7 +1,7 @@
 <br>
 <div class="cards container">
 <% @gnomes.each do |gnome| %>
-<%= link_to gnome_path(gnome), :action => 'go' do %>
+  <%= link_to gnome_path(gnome), :action => 'go' do %>
   <div class="card-product">
       <%= cl_image_tag gnome.photo.key, height: 216, width: 296, crop: :fill %>
     <div class="card-product-infos">
@@ -12,9 +12,6 @@
       <p><%= gnome.description %></p>
     </div>
     <div class="gnome-infos">
-    <% if gnome.user == current_user  %>
-    <%= link_to "edit ce gnome", edit_gnome_path(gnome) %>
-    <% end %>
       <p><strong><%= gnome.price %>€ per day</strong></p>
       <div class="heart-icon">
         <i class="fa-regular fa-heart"></i>
@@ -24,5 +21,5 @@
     </div>
   </div>
   <% end %>
-  <% end %>
+<% end %>
 </div>
