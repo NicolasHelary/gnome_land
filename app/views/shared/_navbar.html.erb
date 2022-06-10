@@ -8,10 +8,16 @@
       <div class="col-sm-4 offset-md-1 py-4">
         <h4 class="text-white">Search Here...</h4>
         <div class="input-group rounded">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <form class="d-flex justify-content-center" action="/gnomes" accept-charset="UTF-8" method="get" style="width:350px">
+            <input type="text" name="query" id="query" value="" class="form-control rounded" placeholder="Find a gnomes">
+            <button type="submit" name="commit"  data-disable-with="Search">
+              <i class="fas fa-search" id="search-icon"></i>
+            </button>
+          </form>
+          <%# <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
           <span class="input-group-text border-0" id="search-addon">
             <i class="fas fa-search" id="search-icon"></i>
-          </span>
+          </span> %>
         </div>
       </div>
       <div class="container text-center">

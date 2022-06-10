@@ -3,7 +3,17 @@ class GnomesController < ApplicationController
   before_action :set_gnome, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gnomes = Gnome.all
+    if params[:query].present?
+      sql_query = " \
+        gnomes.name ILIKE :query \
+        OR gnomes.description ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR users.last_name ILIKE :query \
+      "
+      @gnomes = Gnome.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @gnomes = Gnome.all
+    end
   end
 
   def show
