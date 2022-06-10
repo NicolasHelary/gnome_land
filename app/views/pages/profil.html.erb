@@ -30,17 +30,17 @@
                     class: "btn btn-danger text-white rounded-4",
                     data: { confirm: "Are you sure?" } %>
       </div>
+
     </div>
     <% end %>
   <% end %>
 
-
+    <div class="show-container">
     <h3><%= "You have another gnome for rent ?" %></h3>
     <%= link_to "Add a gnome", new_gnome_path(@gnome), class: "btn btn-info text-white rounded-4" %>
-
-  <% reservation_number = current_user.reservations.count %>
-  <h2><%= reservation_number > 1 ? "You have #{current_user.reservations.count} ongoing reservations" :"You have #{current_user.reservations.count} ongoing reservation" %></h2>
-
+    <% reservation_number = current_user.reservations.count %>
+    <h2><%= reservation_number > 1 ? "You have #{current_user.reservations.count} ongoing reservations" :"You have #{current_user.reservations.count} ongoing reservation" %></h2>
+    </div>
   <% current_user.reservations.each do |reservation| %>
     <div class="show-container">
       <%= cl_image_tag reservation.gnome.photo.key, height: 216, width: 296, crop: :fill %>
