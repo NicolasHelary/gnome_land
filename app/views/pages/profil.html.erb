@@ -1,9 +1,9 @@
 <br>
 <div class="container profil">
-
   <h2 id="hello-user"><%= "Hello #{current_user.first_name} #{current_user.last_name} !"%></h2>
   <br>
-  <h3><%= "You have #{current_user.gnomes.count} gnomes for rent right now !" %></h3>
+  <% gnome_number = current_user.gnomes.count %>
+  <h3><%= gnome_number > 1 ? "You have #{current_user.gnomes.count} gnomes for rent" : "You have #{current_user.gnomes.count} gnome for rent" %></h3>
 
   <% if current_user.gnomes.count == 0 %>
     <br>
@@ -30,8 +30,34 @@
                     class: "btn btn-danger text-white rounded-4",
                     data: { confirm: "Are you sure?" } %>
       </div>
+
     </div>
     <% end %>
   <% end %>
 
+    <div class="show-container">
+    <h3><%= "You have another gnome for rent ?" %></h3>
+    <%= link_to "Add a gnome", new_gnome_path(@gnome), class: "btn btn-info text-white rounded-4" %>
+    <% reservation_number = current_user.reservations.count %>
+    <h2><%= reservation_number > 1 ? "You have #{current_user.reservations.count} ongoing reservations" :"You have #{current_user.reservations.count} ongoing reservation" %></h2>
+    </div>
+  <% current_user.reservations.each do |reservation| %>
+    <div class="show-container">
+      <%= cl_image_tag reservation.gnome.photo.key, height: 216, width: 296, crop: :fill %>
+      <div class="card-product-infos">
+        <p><%= "Gnome: #{reservation.gnome.name}" %></p>
+        <p><%= "Start date: #{reservation.start_date}" %></p>
+        <p><%= "End date: #{reservation.end_date}" %></p>
+        <p><%= "Number of days: #{(reservation.end_date-reservation.start_date)}" %></p>
+        <p><%= "Total price: #{((reservation.end_date-reservation.start_date) * reservation.gnome.price).to_i}€" %></p>
+        <%= link_to "Edit reservation", edit_gnome_reservation_path(reservation.gnome, reservation),
+          class: "btn btn-success text-white rounded-4" %>
+        <%= link_to "Delete reservation",
+          gnome_reservation_path(reservation.gnome, reservation),
+          method: :delete,
+          class: "btn btn-danger text-white rounded-4",
+          data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+    <% end %>
 </div>

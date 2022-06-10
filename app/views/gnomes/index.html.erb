@@ -12,16 +12,15 @@
       <p><%= gnome.description %></p>
     </div>
     <div class="gnome-infos">
+    <% if gnome.user == current_user  %>
+    <%= link_to "edit ce gnome", edit_gnome_path(gnome) %>
+    <% end %>
       <p><strong><%= gnome.price %>€ per day</strong></p>
       <div class="heart-icon">
         <i class="fa-regular fa-heart"></i>
       </div>
     </div>
-    <%# <p class="link-index btn btn-outline-success btn-rounded"> <%= link_to "Rent this gnome", gnome_path(gnome) %></p>
-    <%# <p class="link-index btn btn-outline-warning btn-rounded"><%= link_to "Delete #{gnome.name}", %>
-                    <%# gnome_path(gnome),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
+
     </div>
   </div>
   <% end %>

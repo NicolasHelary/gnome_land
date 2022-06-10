@@ -12,16 +12,27 @@ class ReservationsController < ApplicationController
     @reservation.gnome = @gnome
     @reservation.user = current_user
     if @reservation.save
+
       redirect_to reservation_path(@reservation)
+
       redirect_to profil_path
     else
       render :new
     end
   end
 
+  def edit ##
+    @gnome = reservation.gnome
+  end
+
+  def update ##
+    reservation.update(reservation_params)
+    redirect_to profil_path
+  end
+
   def destroy
     @reservation.destroy
-    redirect_to reservations_path
+    redirect_to profil_path
   end
 
   private
