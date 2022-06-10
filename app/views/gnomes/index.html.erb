@@ -1,20 +1,25 @@
 <br>
-<br>
-<br>
 <div class="cards container">
 <% @gnomes.each do |gnome| %>
+<%= link_to gnome_path(gnome), :action => 'go' do %>
   <div class="card-product">
       <%= cl_image_tag gnome.photo.key, height: 216, width: 296, crop: :fill %>
     <div class="card-product-infos">
+    <div class="gnome-name">
       <h2><%= gnome.name %></h2>
+    </div>
+    <div class="gnome-desc">
       <p><%= gnome.description %></p>
-      <p><%= gnome.price %></p>
-     <p class="link-index btn btn-outline-success btn-rounded"> <%= link_to "Rent this gnome", gnome_path(gnome) %></p>
-      <%# <p class="link-index btn btn-outline-warning btn-rounded"><%= link_to "Delete #{gnome.name}", %>
-                    <%# gnome_path(gnome),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %></p>
+    </div>
+    <div class="gnome-infos">
+      <p><strong><%= gnome.price %>€ per day</strong></p>
+      <div class="heart-icon">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+    </div>
+
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>

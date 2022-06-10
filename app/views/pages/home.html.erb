@@ -4,5 +4,29 @@
         <%= link_to "Rent a gnome", gnomes_path, class: "home-btn-link nav-link btn btn-danger text-white rounded-4" %>
         <%= link_to "Add a gnome for rent", new_gnome_path, class: "home-btn-link nav-link btn btn-danger text-white rounded-4" %>
         <%= link_to "Login", new_user_session_path, class: "home-btn-link nav-link btn btn-danger text-white rounded-4" %>
+        <button type="button" class="home-btn-link nav-link btn btn-danger text-white rounded-4" id="btn-modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Don't press that Button !
+        </button>
       </div>
     </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Now you're cursed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="image-div">
+          <%= image_tag"img-gnome.png", :class => "image-gnome" %>
+          <br>
+          <p class="text-modal">Oh, btw, Thanks to this lil'gnome for the help</p>
+        </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

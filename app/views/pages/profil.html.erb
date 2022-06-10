@@ -1,48 +1,63 @@
-
-<h2><%= "Hello #{current_user.first_name} #{current_user.last_name} !"%></h2>
+<br>
+<div class="container profil">
+  <h2 id="hello-user"><%= "Hello #{current_user.first_name} #{current_user.last_name} !"%></h2>
+  <br>
   <% gnome_number = current_user.gnomes.count %>
-<h3><%= gnome_number > 1 ? "You have #{current_user.gnomes.count} gnomes for rent" : "You have #{current_user.gnomes.count} gnome for rent" %></h3>
+  <h3><%= gnome_number > 1 ? "You have #{current_user.gnomes.count} gnomes for rent" : "You have #{current_user.gnomes.count} gnome for rent" %></h3>
 
-  <% current_user.gnomes.each do |gnome| %>
-  <div class="show-container">
-      <%= cl_image_tag gnome.photo.key, height: 216, width: 296, crop: :fill %>
-    <div class="card-product-infos">
-      <h2><%= gnome.name %></h2>
-      <p><%= gnome.description %></p>
-      <p><%= gnome.price %> €</p>
-      <%= link_to "Edit #{gnome.name}", edit_gnome_path(gnome), class: "btn btn-success text-white rounded-4" %>
-
-      <%= link_to "Delete #{gnome.name}",
-                  gnome_path(gnome),
-                  method: :delete,
-                  class: "btn btn-danger text-white rounded-4",
-                  data: { confirm: "Are you sure?" } %>
+  <% if current_user.gnomes.count == 0 %>
+    <br>
+    <div class="gif">
+      <%= image_tag"gnome-piss.gif", :class => "gif-piss" %>
     </div>
-  </div>
+
+    <h5>What are you waiting for ? Go check our last cursed garden gnomes ! </h5>
+    <%= link_to "Check The Gnomes", gnomes_path, class: "btn btn-dark" %>
+
+  <% else %>
+    <% current_user.gnomes.each do |gnome| %>
+    <div class="show-container">
+        <%= cl_image_tag gnome.photo.key, height: 216, width: 296, crop: :fill %>
+      <div class="card-product-infos">
+        <h2><%= gnome.name %></h2>
+        <p><%= gnome.description %></p>
+        <p><%= gnome.price %> €</p>
+        <%= link_to "Edit #{gnome.name}", edit_gnome_path(gnome), class: "btn btn-success text-white rounded-4" %>
+
+        <%= link_to "Delete #{gnome.name}",
+                    gnome_path(gnome),
+                    method: :delete,
+                    class: "btn btn-danger text-white rounded-4",
+                    data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+    <% end %>
   <% end %>
 
-  <h3><%= "You have another gnome for rent ?" %></h3>
-   <%= link_to "Add a gnome", new_gnome_path(@gnome), class: "btn btn-info text-white rounded-4" %>
 
-<% reservation_number = current_user.reservations.count %>
-<h2><%= reservation_number > 1 ? "You have #{current_user.reservations.count} ongoing reservations" :"You have #{current_user.reservations.count} ongoing reservation" %></h2>
+    <h3><%= "You have another gnome for rent ?" %></h3>
+    <%= link_to "Add a gnome", new_gnome_path(@gnome), class: "btn btn-info text-white rounded-4" %>
 
-<% current_user.reservations.each do |reservation| %>
-  <div class="show-container">
-     <%= cl_image_tag reservation.gnome.photo.key, height: 216, width: 296, crop: :fill %>
-    <div class="card-product-infos">
-      <p><%= "Gnome: #{reservation.gnome.name}" %></p>
-      <p><%= "Start date: #{reservation.start_date}" %></p>
-      <p><%= "End date: #{reservation.end_date}" %></p>
-      <p><%= "Number of days: #{(reservation.end_date-reservation.start_date)}" %></p>
-       <p><%= "Total price: #{((reservation.end_date-reservation.start_date) * reservation.gnome.price).to_i}€" %></p>
-      <%= link_to "Edit reservation", edit_gnome_reservation_path(reservation.gnome, reservation),
-        class: "btn btn-success text-white rounded-4" %>
-      <%= link_to "Delete reservation",
-        gnome_reservation_path(reservation.gnome, reservation),
-        method: :delete,
-        class: "btn btn-danger text-white rounded-4",
-        data: { confirm: "Are you sure?" } %>
+  <% reservation_number = current_user.reservations.count %>
+  <h2><%= reservation_number > 1 ? "You have #{current_user.reservations.count} ongoing reservations" :"You have #{current_user.reservations.count} ongoing reservation" %></h2>
+
+  <% current_user.reservations.each do |reservation| %>
+    <div class="show-container">
+      <%= cl_image_tag reservation.gnome.photo.key, height: 216, width: 296, crop: :fill %>
+      <div class="card-product-infos">
+        <p><%= "Gnome: #{reservation.gnome.name}" %></p>
+        <p><%= "Start date: #{reservation.start_date}" %></p>
+        <p><%= "End date: #{reservation.end_date}" %></p>
+        <p><%= "Number of days: #{(reservation.end_date-reservation.start_date)}" %></p>
+        <p><%= "Total price: #{((reservation.end_date-reservation.start_date) * reservation.gnome.price).to_i}€" %></p>
+        <%= link_to "Edit reservation", edit_gnome_reservation_path(reservation.gnome, reservation),
+          class: "btn btn-success text-white rounded-4" %>
+        <%= link_to "Delete reservation",
+          gnome_reservation_path(reservation.gnome, reservation),
+          method: :delete,
+          class: "btn btn-danger text-white rounded-4",
+          data: { confirm: "Are you sure?" } %>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
+</div>

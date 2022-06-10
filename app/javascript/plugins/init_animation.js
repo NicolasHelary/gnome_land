@@ -1,16 +1,30 @@
 const animationTrololo = () => {
 
+  const show = document.querySelector("#show-page");
+  const animewow = document.getElementById("anime-wow");
 
-
-
-
-  var audio = document.getElementById("audio");
-  document.onclick = function() {
-    audio.play();
+  if (show) {
+    animewow.play();
   }
-}
-  // var audio = document.getElementById("audio");
-  // audio.addEventListener("click", (event) => {
-  // })
 
+  const modal = document.querySelector("#btn-modal");
+  const laugh = document.getElementById("laugh");
+
+  modal.onclick = function() {
+    laugh.play();
+  }
+
+  // const reservation = document.querySelector("#IDduContainerDElaPAGEdeRESERVATION");
+  // const wow = document.getElementById("wow");
+
+  // if (reservation) {
+  //   wow.play();
+  // }
+
+}
+
+
+// document.onclick = function() {
+//   audio.play();
+// }
 export {animationTrololo}

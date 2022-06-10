@@ -3,8 +3,6 @@
   flex-direction: column;
   align-items: center;
   background-color: #d9d9d9;
-  width: 100vw;
-  height: 100%;
 }
 
 .show-container img {
@@ -18,5 +16,19 @@
 }
 
 .show-container h2 {
-font-weight: bold;
+  font-weight: bold;
+  padding-left: 25px;
+  padding-top: 5px;
 }
+
+.show-container a {
+  margin-left: 25px;
+  margin-bottom: 25px;
+  font-family: "Fuzzy Bubbles";
+  justify-content: center;
+}
+
+.show-container span {
+  font-weight: bold;
+  font-family: "Fuzzy Bubbles";
+  }

@@ -12,6 +12,9 @@ class ReservationsController < ApplicationController
     @reservation.gnome = @gnome
     @reservation.user = current_user
     if @reservation.save
+
+      redirect_to reservation_path(@reservation)
+
       redirect_to profil_path
     else
       render :new

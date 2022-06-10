@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
@@ -18,7 +19,8 @@
       <%= render 'shared/flashes' %>
         <%= yield %>
       <%= render 'shared/footer' %>
-
-      <audio id="audio" src="app/assets/sound/Animewow.mp3"></audio>
+      <%=audio_tag("Animewow.mp3", id: "anime-wow")%>
+      <%=audio_tag("Laugh.mp3", id: "laugh")%>
+      <%=audio_tag("wow.mp3", id: "wow")%>
   </body>
 </html>
