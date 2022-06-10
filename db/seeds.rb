@@ -31,7 +31,7 @@ file7 = URI.open('https://res.cloudinary.com/dnlgspyxu/image/upload/v1654683663/
 # Gnome:
 puts "Creating Gnomes"
 
-gnome1 = Gnome.create!(name: 'Possédé (!attention)', description: "Gnome dominé par une puissance occulte, se cache et me joue des tours (aled) ", price: 10, user: user1)
+gnome1 = Gnome.create!(name: 'Possédé', description: "Gnome dominé par une puissance occulte, se cache et me joue des tours (aled) ", price: 10, user: user1)
 gnome2 = Gnome.create!(name: 'Meme Guy', description: "T'as la réf ?", price: 13, user: user1)
 gnome8 = Gnome.create!(name: 'Sexy Gnome', description: 'le gnome le plus sexy de ta region', price: 8, user: user2)
 
